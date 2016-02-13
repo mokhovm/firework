@@ -1,5 +1,6 @@
 package main
 {
+	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	
@@ -23,11 +24,13 @@ package main
 		public function FireworksNS()
 		{
 			stage.addEventListener(MouseEvent.CLICK, onClick, false, 0, true);
+			var back:MovieClip = new NsBack();
+			addChild(back);
 		}
 		
 		protected function onClick(event:MouseEvent):void
 		{
-			//var rocket:Rocket = new Rocket(this);
+			var rocket:Rocket = new Rocket(this, 0, 620);
 		}	
 	}
 }
