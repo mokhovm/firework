@@ -16,10 +16,7 @@ package main
 		 * на сколько уменьшается искринка хвоста ракеты (влияет на длину хвоста) 
 		 */		
 		private const SPARKS_REDUCE_SCALE:Number = 0.03;
-		/**
-		 * количество звезд во взрыве 
-		 */		
-		private const STARS_QTY:int = 100;
+		
 		/**
 		 * количество искр в хвосте ракеты 
 		 */		
@@ -35,14 +32,14 @@ package main
 			const yOffest:int = 11;
 			
 			screen = aParent;
-			mc = new NsRocket();
+			mc = new NsRocket2();
 			//mc.blendMode = BlendMode.ADD;
 			
 			mc.x = (aX != 0 ? aX : Math.random() * screen.stage.stageWidth); 
 			mc.y = (aY != 0 ? aY : screen.stage.stageHeight - 50);
 			//color = (aColor != 0 ? aColor : Math.round(Math.random() * Fireworks.MAX_COLORS));
 			
-			friction = FireworksNS.DEF_FRICTION;
+			friction = FireworksNS.DEF_FRICTION + 0.02;
 			gravity = FireworksNS.DEF_GRAVITY;
 			
 			dx = Math.random() * xOffset * 2 - xOffset;
@@ -86,9 +83,9 @@ package main
 			var qty:int = 0;
 			mc.removeEventListener(Event.ENTER_FRAME, onRocketFrame);
 			mc.gotoAndPlay('explode');
-			while(qty < STARS_QTY)
+			while(qty < Fragment.FRAGMENTS_QTY)
 			{
-				//new Star(screen, mc.x, mc.y, color);
+				new Fragment(screen, mc.x, mc.y, 8);
 				qty ++;
 			}
 		}

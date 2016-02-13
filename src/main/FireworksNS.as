@@ -21,6 +21,7 @@ package main
 		 */
 		public static const DEF_GRAVITY:Number = 0.2;
 		
+		
 		public function FireworksNS()
 		{
 			stage.addEventListener(MouseEvent.CLICK, onClick, false, 0, true);
