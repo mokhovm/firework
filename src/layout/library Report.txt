@@ -1,0 +1,84 @@
+﻿library.swf Movie Report
+-------------------------
+
+Frame #    Frame Bytes    Total Bytes    Scene
+-------    -----------    -----------    -----
+      1          73866          73866    Scene 1 (AS 3.0 Classes Export Frame)
+
+Scene      Shape Bytes    Text Bytes    ActionScript Bytes
+-------    -----------    ----------    ------------------
+Scene 1              0             0                  2263
+
+Symbol                    Shape Bytes    Text Bytes    ActionScript Bytes
+----------------------    -----------    ----------    ------------------
+NsRocket2                           0             0                     0
+NsBack                            414             0                     0
+Огонек в центре спрайт              0             0                     0
+Вспышка спрайт              0             0                     0
+Ракета                        0             0                     0
+Врзыв 2                        0             0                     0
+Взрыв 1                        0             0                     0
+Вспышка  вектор              0             0                     0
+Огонек в центре              0             0                     0
+елка                         2914             0                     0
+Елка2 темная             66             0                     0
+Снежок на ветке            241             0                     0
+Снежок на ветке 2            267             0                     0
+Елка без снега              0             0                     0
+Дерево                      547             0                     0
+Shape 36 copy                       0             0                     0
+Елки                        12596             0                     0
+Гора1                           0             0                     0
+Symbol 112                         99             0                     0
+Symbol 113                        187             0                     0
+Symbol 103                        170             0                     0
+Symbol 104                        195             0                     0
+Symbol 105                         46             0                     0
+Symbol 106                         47             0                     0
+Symbol 107                         68             0                     0
+Звезда                       96             0                     0
+<Path>                            261             0                     0
+<Path>_1                          204             0                     0
+NsRocketSpark                       0             0                     0
+Искра от ракеты              0             0                     0
+NsRocketStar                        0             0                     0
+Синяя                          0             0                     0
+Оранжевая                  0             0                     0
+Зеленая                      0             0                     0
+Малиновая                  0             0                     0
+Голубая                      0             0                     0
+Желтая                        0             0                     0
+Белая                          0             0                     0
+Красная                      0             0                     0
+Огонь из сопла              0             0                     0
+NsExplode                           0             0                     0
+
+ActionScript Bytes    Location
+------------------    --------
+               372    Scene 1:Frame 1:NsBack
+               481    Scene 1:Frame 1:NsExplode
+               539    Scene 1:Frame 1:NsRocket2
+               385    Scene 1:Frame 1:NsRocketSpark
+               486    Scene 1:Frame 1:NsRocketStar
+
+Bitmap                         Compressed    Original      Compression
+---------------------------    ----------    ----------    -----------
+bang_icon.png                       31012        360000    JPEG Quality=80
+                                      379          1156    Lossless
+                                      343          1156    Lossless
+                                      368          1156    Lossless
+                                      372          1156    Lossless
+                                      372          1156    Lossless
+                                      374          1156    Lossless
+                                      156          1156    Lossless
+                                      350          1156    Lossless
+                                      116           196    Lossless
+Shape 36 copy                        5377         43788    JPEG Quality=80
+Vector Smart Object copy 40          2618         29200    JPEG Quality=80
+                                     3794         33856    Lossless
+bullet.png                            174          2296    Lossless
+                                      356           576    Lossless
+
+
+
+

@@ -31,7 +31,7 @@ package main
 		
 		protected function onClick(event:MouseEvent):void
 		{
-			var rocket:Rocket = new Rocket(this, 0, 620);
+			var rocket:Rocket = new Rocket(this, stage.mouseX, stage.mouseY);
 		}	
 	}
 }

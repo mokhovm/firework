@@ -21,12 +21,18 @@ package main
 		
 		// сила врзыва ракеты (определяет размер взрыва)
 		private const POWER_EXPLODE:int = 20;
-		// сколько пролетает звезда, прежде чем погаснуть
-		private const STAR_DISTANCE:Number = 120;
-		// на сколько уменьшается звезда с каждым фреймом
-		private const STAR_REDUCE:Number = 0.02;
+		// сколько пролетает фрагмент, прежде чем погаснуть
+		private const FRAG_DISTANCE:Number = 120;
+		// на сколько уменьшается фрагмент с каждым фреймом
+		private const FRAG_REDUCE:Number = 0.02;
+		// на сколько прибавляется вероятность взрыва фрагмента с каждым фреймом
+		private const EXPLODE_PROB:Number = 0.002;
 		
+		private var explodeProb:Number = 0;
+		// сколько раз взрвался фрагмент
 		private var expQty:int = 0;
+		// взрывался ли этот фрагмент уже?
+		private var isExploded:Boolean;
 		
 		public function Fragment(aParent:DisplayObjectContainer, aX:int, aY:int, 
 							 aColor:int, aExpQty:int = 0, aMc:MovieClip = null, centerX:int = 0)
@@ -68,7 +74,7 @@ package main
 		 * 
 		 */
 		public static function createFragments(aParent:DisplayObjectContainer, aX:int, aY:int, 
-			aColor:int, aExpQty:int, aQty:int):void
+			aColor:int, aExpQty:int = 0, aQty:int = FRAGMENTS_QTY):void
 		{
 			var qty:int = 0;
 			var scale:Number = 1 / (aExpQty + 1); 
@@ -133,17 +139,26 @@ package main
 				
 				//var dist:Number = getDistance(new Point(startX, startY), new Point(mc.x, mc.y));
 				//var scale:Number = 1 - dist / STAR_DISTANCE;
-				var scale:Number = mc.scaleX - STAR_REDUCE; 
+				var scale:Number = mc.scaleX - FRAG_REDUCE; 
 				
 				mc.scaleX = scale; 
 				mc.scaleY = scale;
-				if(mc.scaleX < 0)
+				
+				if (expQty < EXPLODE_QTY && !isExploded)
 				{
-					if (expQty < EXPLODE_QTY)
+					if (Math.random() < explodeProb)
 					{
+						isExploded = true;
 						expQty ++;
 						createFragments(screen, mc.x, mc.y, color, expQty, FRAGMENTS_QTY / (expQty + 2));
 					}
+					else
+						explodeProb += EXPLODE_PROB;	
+				}
+				
+				
+				if(mc.scaleX < 0)
+				{
 					
 					mc.removeEventListener(Event.ENTER_FRAME, onStarFrame);
 					mc.parent.removeChild(mc);

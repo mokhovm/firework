@@ -82,12 +82,9 @@ package main
 		{
 			var qty:int = 0;
 			mc.removeEventListener(Event.ENTER_FRAME, onRocketFrame);
-			mc.gotoAndPlay('explode');
-			while(qty < Fragment.FRAGMENTS_QTY)
-			{
-				new Fragment(screen, mc.x, mc.y, 8);
-				qty ++;
-			}
+			
+			//mc.gotoAndPlay('explode');
+			Fragment.createFragments(screen, mc.x, mc.y, 0);
 		}
 		
 		/**
